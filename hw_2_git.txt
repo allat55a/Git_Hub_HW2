@@ -1,0 +1,63 @@
+GitHub. HW_2
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+git branch Postman; git branch Jmeter; git branch Checklists; git branch Bug_Reports; git branch SQL; git branch Charles; git branch Mobile_testing
+
+2. Запушить все ветки на внешний репозиторий
+git push -u origin Postman; git push -u origin Jmeter; git push -u origin Checklists; git push -u origin Bug_Reports; git push -u origin SQL; git push -u origin Charles; git push -u origin Mobile_testing
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+git checkout Bug_Reports;
+nano bag.txt
+Summary: Короткое описание проблемы, явно указывающее на причину и тип ошибочной ситуации.
+Project: Название тестируемого проекта.
+Component: Название части или функции тестируемого продукта.
+Version: Версия на которой была найдена ошибка.
+Severity: S1 (Blocker); S2 (Critical); S3 (Major); S4 (Minor); S5 (Trivial).
+Priority: P1 (High); P2 (Medium); P3 (Low).
+Status: Статус бага. Зависит от используемой процедуры и жизненного цикла бага.
+Author: Создатель баг репорта.
+Assigned To: Имя сотрудника, назначенного на решение проблемы.
+Окружение: Информация об окружении, на котором был найден баг: операционная система, сервис пак, для WEB тестирования - имя и версия браузера и т.д.
+Steps to Reproduce: Шаги, по которым можно легко воспроизвести ситуацию, приведшую к ошибке.
+Result: Результат, полученный после прохождения шагов к воспроизведению.
+Expected Result: Ожидаемый правильный результат.
+Attachment: Файл с логами, скриншот или любой другой документ, который может помочь прояснить причину ошибки или указать на способ решения проблемы.
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add .; git commit -m "add bug.txt"; git push
+
+5. Вмержить ветку Bug Reports в Main
+git checkout main; git merge Bug_Reports
+
+6. Запушить main на внешний репозиторий.
+git add .; git commit; git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout Checklists;
+vim checklist.txt
+чек-лист функционального тестирования веб-сайта:
+проверить открытие и доступность сайта;
+проверить открытие и доступность сайта повторно после его закрытия;
+проконтролировать, чтобы работали все пункты в меню;
+проконтролировать, чтобы нажимались кнопки на сайте;
+проверить, чтобы открывались все ссылки;
+посмотреть, чтобы не было битых ссылок;
+заполнить и проверить все формы на сайте;
+проверить работоспособность основных элементов сайта;
+загрузить документы и проверить корректность загрузки.
+
+8. Запушить структуру на внешний репозиторий
+git add .; git commit -m " add checklist"; git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Pull requests -> compare and poll request -> create pull request -> merge pull request -> confirm merge
+ 
+10. Синхронизировать Внешнюю и Локальную ветки Main
+ git checkout main; git fetch; git pull
